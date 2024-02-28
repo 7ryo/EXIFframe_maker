@@ -170,7 +170,7 @@ class App(customtkinter.CTk):
                                                        command=get_preview_img)
         self.combobox_logo.grid(row=2, column=1, padx=20, pady=10, sticky="nesw")
 
-        self.label_outputpath = customtkinter.CTkLabel(self.right_frame, text="Output Path (Please Contain Only English)")
+        self.label_outputpath = customtkinter.CTkLabel(self.right_frame, text="Output Path")
         self.label_outputpath.grid(row=3, column=0, columnspan=2, padx=20, pady=10, sticky="nsw")
         self.button_browsepath = customtkinter.CTkButton(self.right_frame, text="Browse", command=browse_directory)
         self.button_browsepath.grid(row=3, column=2, padx=20, pady=10)

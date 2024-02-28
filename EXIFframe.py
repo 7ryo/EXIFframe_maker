@@ -92,7 +92,7 @@ def get_exif_data(image_path):
 
     return exif_data
 
-def draw_watermark_frame(image_path='path', bool_output=False, input_logo=selected_logo):
+def draw_watermark_frame(image_path, input_logo, bool_output=False):
     exif_data = get_exif_data(image_path)
     mm, iso, f, exptime = (
         exif_data.get("FocalLength", default_exif_message),
@@ -120,7 +120,7 @@ def draw_watermark_frame(image_path='path', bool_output=False, input_logo=select
     padding_left = padding
     font_size = int(blank_height/4)
     font_reualr = ImageFont.truetype("./Saira_Semi_Condensed/SairaSemiCondensed-Regular.ttf", size=font_size)
-    font_bold = ImageFont.truetype("C:/Users/suwen/Desktop/bot/Saira_Semi_Condensed/SairaSemiCondensed-Bold.ttf", size=font_size)
+    font_bold = ImageFont.truetype("./Saira_Semi_Condensed/SairaSemiCondensed-Bold.ttf", size=font_size)
     logo_max_height = int(blank_height/1.5)
 
     #paste original image to blank
@@ -191,6 +191,6 @@ def generate(img_path_list, logo, dir, suffix):
     output_dir = dir
     output_suffix = suffix
     for current_path in img_path_list:
-        draw_watermark_frame(current_path, bool_output=True)
+        draw_watermark_frame(current_path, input_logo=selected_logo, bool_output=True)
     return 0
 
