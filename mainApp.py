@@ -28,7 +28,7 @@ class App(customtkinter.CTk):
 
         self.title("EXIF WATERMARK MAKER")
         self.geometry(f"{800}x{600}")
-        self.maxsize(800, 600)
+        #self.maxsize(800, 600)
 
         def addtolistbox(file_path):
             self.listbox_importedfile.insert("end", file_path)
@@ -183,7 +183,7 @@ class App(customtkinter.CTk):
 
         self.label_outputname = customtkinter.CTkLabel(self.right_frame, text="Output Filename")
         self.label_outputname.grid(row=6, column=0, padx=20, pady=10, sticky="nsw")
-        self.label_outputstem = customtkinter.CTkLabel(self.right_frame, text="original filename")
+        self.label_outputstem = customtkinter.CTkLabel(self.right_frame, text="original filename+")
         self.label_outputstem.grid(row=6, column=1, padx=10, pady=10)
         text_suffix = customtkinter.StringVar()
         text_suffix.set("_with_frame")
