@@ -170,24 +170,25 @@ class App(customtkinter.CTk):
                                                        command=get_preview_img)
         self.combobox_logo.grid(row=2, column=1, padx=20, pady=10, sticky="nesw")
 
+
         self.label_outputpath = customtkinter.CTkLabel(self.right_frame, text="Output Path")
-        self.label_outputpath.grid(row=3, column=0, columnspan=2, padx=20, pady=10, sticky="nsw")
+        self.label_outputpath.grid(row=4, column=0, columnspan=2, padx=20, pady=10, sticky="nsw")
         self.button_browsepath = customtkinter.CTkButton(self.right_frame, text="Browse", command=browse_directory)
-        self.button_browsepath.grid(row=3, column=2, padx=20, pady=10)
+        self.button_browsepath.grid(row=4, column=2, padx=20, pady=10)
         text_outputpath = customtkinter.StringVar()
         text_outputpath.set(f"{getcurrentdir()}/output")
         self.entry_outputpath = customtkinter.CTkEntry(self.right_frame, textvariable=text_outputpath, state=tkinter.DISABLED)
-        self.entry_outputpath.grid(row=4, column=0, columnspan=3, padx=20, pady=10, sticky="nesw")
+        self.entry_outputpath.grid(row=5, column=0, columnspan=3, padx=20, pady=10, sticky="nesw")
 
 
         self.label_outputname = customtkinter.CTkLabel(self.right_frame, text="Output Filename")
-        self.label_outputname.grid(row=5, column=0, padx=20, pady=10, sticky="nsw")
+        self.label_outputname.grid(row=6, column=0, padx=20, pady=10, sticky="nsw")
         self.label_outputstem = customtkinter.CTkLabel(self.right_frame, text="original filename")
-        self.label_outputstem.grid(row=5, column=1, padx=10, pady=10)
+        self.label_outputstem.grid(row=6, column=1, padx=10, pady=10)
         text_suffix = customtkinter.StringVar()
         text_suffix.set("_with_frame")
         self.entry_outputsuffix = customtkinter.CTkEntry(self.right_frame, textvariable=text_suffix)
-        self.entry_outputsuffix.grid(row=5, column=2, padx=10, pady=10)
+        self.entry_outputsuffix.grid(row=6, column=2, padx=10, pady=10)
 
         self.progressbar_run = customtkinter.CTkProgressBar(self.right_frame, width=100, mode="indeterminate")
         
